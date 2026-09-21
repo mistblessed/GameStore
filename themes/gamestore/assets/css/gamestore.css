@@ -1,0 +1,208 @@
+/*
+ * Reset
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+
+  -webkit-tap-highlight-color: transparent;
+
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #1a1a1a;
+  background-color: #fff;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  text-rendering: optimizeSpeed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.prose ul,
+.prose ol,
+article ul,
+article ol {
+  padding-left: 1.5em;
+  list-style: revert;
+}
+
+blockquote,
+figure {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  font-style: italic; 
+  background-color: transparent;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* Styles intended only for the front.*/
+html {
+	scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: Urbanist;
+	font-style: normal;
+}
+
+/* Variables */
+:root{
+	--background-default: #FAFAFA;
+	--action-main: rgba(14, 13, 15, 0.64);
+  --action-main-svg: rgba(14, 13, 15);
+	--driver-main: rgba(14, 13, 15, 0.08);
+	--text-primary: rgba(14, 13, 15, 1);
+  --secondary-48: rgba(250, 250, 250, 0.48);
+  --white-contrast: #0A090A;
+  --purple-main: #6F76C0;
+}
+
+.dark-mode-gamestore {
+	--background-default: #0E0D0F;
+	--action-main: rgba(255, 255, 255, 0.64);
+  --action-main-svg: rgba(255, 255, 255);
+	--driver-main: rgba(255, 255, 255, 0.12);
+	--text-primary: white;
+  --secondary-48: rgba(14, 13, 15, 0.60);
+  --white-contrast: #FFFFFF;
+}
