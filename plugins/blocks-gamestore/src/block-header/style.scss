@@ -176,7 +176,7 @@
 }
 
 @media (min-width: 600px) {
-	.wp-block-group {
+	.wp-block-blocks-gamestore-block-header .inner-header > .wp-block-group {
 			display: flex;
 			align-items: flex-end;
 			gap: 48px;
@@ -226,6 +226,7 @@
 						left: 0;
 						top: 100%;
 						right: 0;
+						border: none;
 						width: 100%;
 						min-height: 52px;
 						background: var(--secondary-48, rgba(250, 250, 250, 0.48));

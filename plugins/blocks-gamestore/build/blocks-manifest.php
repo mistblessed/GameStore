@@ -26,7 +26,7 @@ return array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
 		'name' => 'blocks-gamestore/block-header',
-		'version' => '0.1.0',
+		'version' => '0.1.1',
 		'title' => 'Header Block',
 		'category' => 'gamestore',
 		'icon' => 'layout',
@@ -52,7 +52,7 @@ return array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
 		'name' => 'blocks-gamestore/block-hero',
-		'version' => '0.1.0',
+		'version' => '0.1.1',
 		'title' => 'Hero Block',
 		'category' => 'widgets',
 		'icon' => 'smiley',
@@ -62,6 +62,48 @@ return array(
 		),
 		'supports' => array(
 			'html' => false
+		),
+		'attributes' => array(
+			'title' => array(
+				'type' => 'string',
+				'source' => 'html',
+				'selector' => '.hero-title'
+			),
+			'description' => array(
+				'type' => 'string',
+				'source' => 'html',
+				'selector' => '.hero-description'
+			),
+			'link' => array(
+				'type' => 'string',
+				'source' => 'attribute',
+				'selector' => 'a',
+				'attribute' => 'href'
+			),
+			'linkAnchor' => array(
+				'type' => 'string',
+				'source' => 'text',
+				'selector' => 'a'
+			),
+			'video' => array(
+				'type' => 'string'
+			),
+			'image' => array(
+				'type' => 'string'
+			),
+			'mediaMode' => array(
+				'type' => 'string',
+				'enum' => array(
+					'image',
+					'video'
+				)
+			),
+			'slides' => array(
+				'type' => 'array',
+				'default' => array(
+					
+				)
+			)
 		),
 		'textdomain' => 'blocks-gamestore',
 		'editorScript' => 'file:./index.js',
