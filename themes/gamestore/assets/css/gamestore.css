@@ -194,6 +194,7 @@ body {
   --mask-gradient: linear-gradient(270deg, rgba(14, 13, 15, 0.00) 0%, #ECECEC 79.5%);
   --accent-gradient: linear-gradient(90deg, #3DAFE2 0%, #6F76C0 100%);
   --mask-gradient-secondary: linear-gradient(180deg, rgba(250, 250, 250, 0.00) 0%, #FAFAFA 100%);
+  --background-80: rgba(250, 250, 250, 0.8);
 }
 
 .dark-mode-gamestore {
@@ -209,6 +210,7 @@ body {
   --mask-gradient: linear-gradient(270deg, rgba(14, 13, 15, 0.00) 0%, #0D0B0F 79.5%);
   --text-secondary: rgba(255, 255, 255, 0.70);
   --mask-gradient-secondary: linear-gradient(180deg, rgba(14, 13, 15, 0.00) 0%, #0E0D0F 100%);
+  --background-80: rgba(14, 13, 15, 0.8);
 }
 
 .wp-site-blocks > main.wp-block-group {
@@ -235,7 +237,7 @@ body {
 	margin-block-start: 0;
 }
 
-.wrappper{
+.wrapper{
   width: 100%;
   max-width: 1540px;
   margin-left: auto;

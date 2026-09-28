@@ -41,3 +41,60 @@ function view_block_games_line($attributes){
 
     return $html;
 }
+
+function view_block_recent_news( $attributes, $content, $block ) {
+    $news_query = new WP_Query( array(
+        'post_type'      => 'news',
+        'post_status'    => 'publish',
+        'posts_per_page' => max( 1, absint( $attributes['count'] ?? 3 ) ),
+        'orderby'       => 'date',
+        'order'         => 'DESC',
+        'no_found_rows'  => true,
+    ) );
+
+    $wrapper_attributes = array();
+    if ( ! empty( $attributes['image'] ) ) {
+        $wrapper_attributes['style'] = 'background-image: url("' . esc_url( $attributes['image'] ) . '");';
+    }
+
+    ob_start();
+    ?>
+    <div <?php echo get_block_wrapper_attributes( $wrapper_attributes ); ?>>
+        <?php if ( $news_query->have_posts() ) : ?>
+            <?php if ( ! empty( $attributes['title'] ) ) : ?>
+                <h2><?php echo esc_html( $attributes['title'] ); ?></h2>
+            <?php endif; ?>
+            <?php if ( ! empty( $attributes['description'] ) ) : ?>
+                <p><?php echo esc_html( $attributes['description'] ); ?></p>
+            <?php endif; ?>
+            <div class="recent-news wrapper">
+            <?php while ( $news_query->have_posts() ) : ?>
+                <?php $news_query->the_post(); ?>
+
+                <article class="news-item">
+                    <?php if (has_post_thumbnail()):?>
+                    <h3><?php echo esc_html( get_the_title() ); ?></h3>
+                    <div class="news-thumbnail">
+                        <img src="<?php echo get_the_post_thumbnail_url() ?>" class="blur-image"  alt="<?php get_the_title() ?>">
+                        <img src="<?php echo get_the_post_thumbnail_url() ?>" class="original-image"  alt="<?php get_the_title() ?>">
+                    </div>
+                    <div class="news-excerpt">
+                    <p><?php echo esc_html( get_the_excerpt() ); ?></p>
+                    </div>
+                    <a href="<?php echo esc_url(get_permalink()) ?>" class="read-more" >Open The Post</a>
+                    <?php endif; ?>
+                </article>
+
+            <?php endwhile; ?>
+            </div>
+        <?php else : ?>
+            <p>No news yet.</p>
+        <?php endif; ?>
+    </div>
+    <?php
+
+    wp_reset_postdata();
+
+    return ob_get_clean();
+}
+

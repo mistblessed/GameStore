@@ -42,3 +42,47 @@ function gamestore_fix_svg() {
 }
 add_action('admin_head', 'gamestore_fix_svg');
 
+function gamestore_register_news() {
+    register_post_type( 'news', array(
+        'labels' => array(
+            'name'          => 'News',
+            'singular_name' => 'News Item',
+            'add_new_item'  => 'Add News Item',
+            'edit_item'     => 'Edit News Item',
+            'all_items'     => 'All News',
+        ),
+        'public'       => true,
+        'has_archive'  => true,
+        'show_in_rest' => true,
+        'menu_icon'    => 'dashicons-megaphone',
+        'supports'     => array(
+            'title',
+            'editor',
+            'thumbnail',
+            'excerpt',
+        ),
+        'rewrite' => array(
+            'slug' => 'news',
+        ),
+    ) );
+
+    register_taxonomy( 'news_category', array( 'news' ), array(
+        'labels' => array(
+            'name'          => 'News Categories',
+            'singular_name' => 'News Category',
+            'add_new_item'  => 'Add News Category',
+            'edit_item'     => 'Edit News Category',
+            'search_items'  => 'Search News Categories',
+            'all_items'     => 'All News Categories',
+        ),
+        'public'            => true,
+        'hierarchical'      => true,
+        'show_in_rest'      => true,
+        'show_admin_column' => true,
+        'rewrite'           => array(
+            'slug' => 'news-category',
+        ),
+    ) );
+}
+
+add_action( 'init', 'gamestore_register_news' );
