@@ -56,3 +56,12 @@ function gamestore_google_fonts_script() {
 	wp_enqueue_style( 'gamestore-google-fonts', gamestore_google_fonts(), [], '1.0.0' );
 }
 add_action( 'wp_enqueue_scripts', 'gamestore_google_fonts_script' );
+
+// Load assets in Gurenberg
+
+function gamestore_gutenberg_styles(){
+	wp_enqueue_style( 'gamestore-google-fonts', gamestore_google_fonts(), [], '1.0.0' );
+
+	add_editor_style('assets/css/editor-style.css');
+}
+add_action('enqueue_block_editor_assets', 'gamestore_gutenberg_styles');

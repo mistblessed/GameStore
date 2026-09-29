@@ -2,7 +2,7 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/block-recent-news/style.scss ***!
   \*********************************************************************************************************************************************************************************************************************************************************/
 body .is-layout-constrained .wp-block-blocks-gamestore-block-recent-news {
-  max-width: 100vw !important;
+  max-width: calc(100% + var(--wp--style--root--padding-right) + var(--wp--style--root--padding-left)) !important;
   margin-left: calc(var(--wp--style--root--padding-right) * -1) !important;
   margin-right: calc(var(--wp--style--root--padding-left) * -1) !important;
   margin-top: clamp(3.75rem, 2.766rem + 4.918vw, 7.5rem) !important;
@@ -90,6 +90,13 @@ body .is-layout-constrained .wp-block-blocks-gamestore-block-recent-news {
   text-align: center;
   padding-right: 48px;
   padding-left: 48px;
+  overflow: hidden;
+  display: block;
+  max-height: 6.25rem;
+  line-height: 3.12rem;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .wp-block-blocks-gamestore-block-recent-news .recent-news .news-item .news-thumbnail {
   position: relative;
@@ -115,6 +122,13 @@ body .is-layout-constrained .wp-block-blocks-gamestore-block-recent-news {
 .wp-block-blocks-gamestore-block-recent-news .recent-news .news-item .news-excerpt {
   padding-right: 48px;
   padding-left: 48px;
+  overflow: hidden;
+  display: block;
+  max-height: 11rem;
+  line-height: 1.7;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 .wp-block-blocks-gamestore-block-recent-news .recent-news .news-item .read-more {
   display: inline-flex;
