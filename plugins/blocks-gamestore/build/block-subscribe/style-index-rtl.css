@@ -76,4 +76,5 @@ h2 {
 }
 .wp-block-blocks-gamestore-subscribe .subscribe-shortcode .mc4wp-response {
   margin-top: 16px;
-  
+  color: var(--text-secondary);
+}
