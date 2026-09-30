@@ -162,3 +162,7 @@ body .is-layout-constrained .wp-block-blocks-gamestore-block-recent-news {
 .wp-block-blocks-gamestore-block-recent-news .recent-news img {
   max-width: 100%;
 }
+
+.wp-block-blocks-gamestore-block-recent-news p {
+  font-size: 20px;
+}
