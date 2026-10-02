@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blocks-gamestore/block-featured-games",
+  "version": "0.1.0",
+  "title": "Featured Games",
+  "category": "gamestore",
+  "icon": "games",
+  "description": "A dynamic grid of WooCommerce games.",
+  "supports": {
+    "html": false,
+    "align": [ "full" ]
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Featured Games"
+    },
+    "description": {
+      "type": "string",
+      "default": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
+    },
+    "count": {
+      "type": "number",
+      "default": 5
+    }
+  },
+  "textdomain": "blocks-gamestore",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

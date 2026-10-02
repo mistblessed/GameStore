@@ -112,3 +112,69 @@ function view_block_subscribe($attributes){
 
     return ob_get_clean();
 }
+
+function view_block_featured_games( $attributes ) {
+    if ( ! function_exists( 'wc_get_products' ) ) {
+        return '';
+    }
+
+    $count = min( 50, max( 1, absint( $attributes['count'] ?? 5 ) ) );
+    $products = wc_get_products( array(
+        'status'  => 'publish',
+        'limit'   => $count,
+        'orderby' => 'date',
+        'order'   => 'DESC',
+    ) );
+
+    $platforms = array(
+        'xbox'        => array( 'label' => 'Xbox', 'file' => 'xbox.svg' ),
+        'pc'          => array( 'label' => 'Windows', 'file' => 'windows.svg' ),
+        'playstation' => array( 'label' => 'PlayStation', 'file' => 'playstation.svg' ),
+    );
+    $icons_url = plugin_dir_url( __FILE__ ) . 'assets/platforms/';
+
+    ob_start();
+    ?>
+    <section <?php echo get_block_wrapper_attributes( array( 'class' => 'alignfull' ) ); ?>>
+        <div class="featured-games-inner wrapper">
+            <?php if ( ! empty( $attributes['title'] ) ) : ?>
+                <h2 class="featured-games-title"><?php echo wp_kses_post( $attributes['title'] ); ?></h2>
+            <?php endif; ?>
+            <?php if ( ! empty( $attributes['description'] ) ) : ?>
+                <p class="featured-games-description"><?php echo wp_kses_post( $attributes['description'] ); ?></p>
+            <?php endif; ?>
+            <?php if ( $products ) : ?>
+                <div class="featured-games-grid">
+                    <?php foreach ( $products as $product ) : ?>
+                        <article class="featured-game">
+                            <a class="featured-game-cover" href="<?php echo esc_url( $product->get_permalink() ); ?>" aria-label="<?php echo esc_attr( $product->get_name() ); ?>">
+                                <?php echo wp_kses_post( $product->get_image( 'large', array( 'alt' => $product->get_name(), 'loading' => 'lazy' ) ) ); ?>
+                            </a>
+                            <div class="featured-game-price">
+                                <?php if ( $product->is_type( 'simple' ) && $product->is_on_sale() && '' !== $product->get_sale_price() ) : ?>
+                                    <ins><?php echo wp_kses_post( wc_price( $product->get_sale_price() ) ); ?></ins>
+                                    <del><?php echo wp_kses_post( wc_price( $product->get_regular_price() ) ); ?></del>
+                                <?php else : ?>
+                                    <?php echo wp_kses_post( $product->get_price_html() ); ?>
+                                <?php endif; ?>
+                            </div>
+                            <h3 class="featured-game-name"><a href="<?php echo esc_url( $product->get_permalink() ); ?>" title="<?php echo esc_attr( $product->get_name() ); ?>"><?php echo esc_html( $product->get_name() ); ?></a></h3>
+                            <div class="featured-game-platforms" aria-label="<?php esc_attr_e( 'Available platforms', 'blocks-gamestore' ); ?>">
+                                <?php foreach ( $platforms as $key => $platform ) : ?>
+                                    <?php if ( 'yes' === $product->get_meta( '_platform_' . $key ) ) : ?>
+                                        <span class="featured-game-platform" title="<?php echo esc_attr( $platform['label'] ); ?>">
+                                            <img src="<?php echo esc_url( $icons_url . $platform['file'] ); ?>" alt="<?php echo esc_attr( $platform['label'] ); ?>" width="20" height="20">
+                                        </span>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </div>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+    </section>
+    <?php
+
+    return ob_get_clean();
+}

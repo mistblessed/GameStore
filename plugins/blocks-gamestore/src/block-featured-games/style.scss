@@ -1,0 +1,144 @@
+.wp-block-blocks-gamestore-block-featured-games {
+    background: var(--background-default, #fafafa);
+    color: var(--text-primary, #0e0d0f);
+    font-family: Urbanist, sans-serif;
+    padding: clamp(60px, 7vw, 120px) max(24px, var(--wp--style--root--padding-right, 24px));
+    box-sizing: border-box;
+
+    .featured-games-inner {
+        max-width: 1540px;
+    }
+
+    .featured-games-title {
+        width: fit-content;
+        margin: 0 auto 24px;
+        background: var(--accent-gradient, linear-gradient(90deg, #3dafe2, #6f76c0));
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        font-size: clamp(36px, 4vw, 54px);
+        font-weight: 700;
+        line-height: 1.25;
+        text-align: center;
+    }
+
+    .featured-games-description {
+        max-width: 980px;
+        margin: 0 auto 48px;
+        color: var(--text-secondary, rgba(14, 13, 15, .7));
+        font-size: 20px;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .featured-games-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .featured-game {
+        min-width: 0;
+    }
+
+    .featured-game-cover {
+        display: block;
+        aspect-ratio: 5 / 7;
+        overflow: hidden;
+        border-radius: 8px;
+    }
+
+    .featured-game-cover img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .featured-game-price {
+        min-height: 24px;
+        margin-top: 12px;
+        color: var(--purple-main, #6f76c0);
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .featured-game-price del {
+        margin-left: 6px;
+        color: var(--text-secondary, rgba(14, 13, 15, .7));
+        font-size: 14px;
+    }
+
+    .featured-game-price ins {
+        text-decoration: none;
+    }
+
+    .featured-game-name {
+        margin: 2px 0 4px;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.4;
+    }
+
+    .featured-game-name a {
+        display: block;
+        overflow: hidden;
+        color: inherit;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-decoration: none;
+    }
+
+    .featured-game-name a:hover,
+    .featured-game-name a:focus-visible {
+        color: var(--purple-main, #6f76c0);
+    }
+
+    .featured-game-platforms {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 20px;
+    }
+
+    .featured-game-platform{
+        display: block;
+        width: 20px;
+        height: 20px;
+    }
+
+    .featured-game-platform img{
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .featured-game-price{
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: 2.4px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #6F76C0;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 5px;
+    }
+
+
+    @media (max-width: 1100px) {
+        .featured-games-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 700px) {
+        .featured-games-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 14px; }
+        .featured-games-description { font-size: 18px; }
+    }
+
+    @media (max-width: 420px) {
+        .featured-game-name { font-size: 15px; }
+        .featured-game-price { font-size: 14px; }
+    }
+}

@@ -1,0 +1,17 @@
+.wp-block-blocks-gamestore-block-featured-games {
+    .featured-games-title,
+    .featured-games-description {
+        position: relative;
+        z-index: 1;
+    }
+
+    .wp-block-blocks-gamestore-block-featured-games .featured-games-title,
+    .wp-block-blocks-gamestore-block-featured-games .featured-games-description {
+        display: none;
+    }
+
+    .wp-block-blocks-gamestore-block-featured-games {
+        padding: 0;
+        margin: 0;
+    }
+}
