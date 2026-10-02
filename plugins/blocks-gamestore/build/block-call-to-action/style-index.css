@@ -1,0 +1,192 @@
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/block-call-to-action/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+.wp-block-blocks-gamestore-block-call-to-action {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  box-sizing: border-box;
+  min-height: 600px;
+  padding: 74px max(24px, var(--wp--style--root--padding-right, 24px));
+  background: var(--background-default, #fafafa);
+  color: var(--text-primary, #0e0d0f);
+  font-family: Urbanist, sans-serif;
+}
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-background,
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-background {
+  z-index: -2;
+  object-fit: cover;
+  object-position: center;
+}
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-overlay {
+  z-index: -1;
+  background: linear-gradient(180deg, var(--background-default) 0%, var(--background-80) 50.06%, var(--background-default) 100%), var(--background-80);
+}
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-panel {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  min-height: 450px;
+  max-width: 1540px;
+  padding: 48px;
+  border: 1px solid var(--driver-main, rgba(14, 13, 15, 0.08));
+  border-radius: 8px;
+  background: var(--secondary-48, rgba(250, 250, 250, 0.48));
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-content {
+  position: relative;
+  z-index: 2;
+  width: 65%;
+}
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+  object-fit: contain;
+}
+.wp-block-blocks-gamestore-block-call-to-action h2 {
+  margin: 0 0 16px;
+  font-size: clamp(34px, 3vw, 54px);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.wp-block-blocks-gamestore-block-call-to-action p {
+  max-width: 900px;
+  margin: 0;
+  color: var(--text-secondary, rgba(14, 13, 15, 0.7));
+  font-size: 20px;
+  line-height: 1.7;
+}
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 36px;
+}
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-buttons a,
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-buttons span {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  min-width: 168px;
+  min-height: 60px;
+  padding: 16px 24px;
+  border: 1px solid var(--driver-main, rgba(14, 13, 15, 0.08));
+  border-radius: 4px;
+  background: var(--secondary-48, rgba(250, 250, 250, 0.48));
+  color: var(--text-primary, #0e0d0f);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-buttons a:hover,
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-buttons a:focus-visible {
+  border-color: var(--purple-main, #6f76c0);
+  outline-color: var(--purple-main, #6f76c0);
+}
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-visual {
+  position: absolute;
+  z-index: 1;
+  inset: 0 0 0 auto;
+  width: 42%;
+  pointer-events: none;
+}
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-character,
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-character-blur {
+  position: absolute;
+  display: block;
+  height: auto;
+  object-fit: contain;
+}
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-character {
+  right: 2%;
+  bottom: -1px;
+  width: min(100%, 620px);
+  max-height: calc(100% + 36px);
+}
+.wp-block-blocks-gamestore-block-call-to-action .call-to-action-character-blur {
+  right: 24%;
+  bottom: 5%;
+  width: 34%;
+  filter: blur(148px);
+  opacity: 0.9;
+}
+@media (max-width: 1100px) {
+  .wp-block-blocks-gamestore-block-call-to-action .call-to-action-content {
+    width: 70%;
+  }
+  .wp-block-blocks-gamestore-block-call-to-action .call-to-action-visual {
+    width: 38%;
+  }
+  .wp-block-blocks-gamestore-block-call-to-action .call-to-action-buttons {
+    gap: 12px;
+  }
+  .wp-block-blocks-gamestore-block-call-to-action .call-to-action-buttons a,
+  .wp-block-blocks-gamestore-block-call-to-action .call-to-action-buttons span {
+    min-width: 130px;
+  }
+}
+@media (max-width: 760px) {
+  .wp-block-blocks-gamestore-block-call-to-action {
+    min-height: 0;
+    padding-block: 60px;
+  }
+  .wp-block-blocks-gamestore-block-call-to-action .call-to-action-panel {
+    display: block;
+    min-height: 0;
+    padding: 32px 24px 0;
+    overflow: hidden;
+  }
+  .wp-block-blocks-gamestore-block-call-to-action .call-to-action-content {
+    width: 100%;
+  }
+  .wp-block-blocks-gamestore-block-call-to-action .call-to-action-visual {
+    position: relative;
+    width: 100%;
+    height: 310px;
+    margin-top: 8px;
+  }
+  .wp-block-blocks-gamestore-block-call-to-action .call-to-action-character {
+    right: 50%;
+    transform: translateX(50%);
+    max-height: 100%;
+  }
+  .wp-block-blocks-gamestore-block-call-to-action .call-to-action-character-blur {
+    right: 34%;
+  }
+}
+@media (max-width: 480px) {
+  .wp-block-blocks-gamestore-block-call-to-action h2 {
+    font-size: 34px;
+  }
+  .wp-block-blocks-gamestore-block-call-to-action p {
+    font-size: 17px;
+  }
+  .wp-block-blocks-gamestore-block-call-to-action .call-to-action-buttons {
+    gap: 10px;
+  }
+  .wp-block-blocks-gamestore-block-call-to-action .call-to-action-buttons a,
+  .wp-block-blocks-gamestore-block-call-to-action .call-to-action-buttons span {
+    flex: 1 1 130px;
+    min-height: 50px;
+    padding: 12px;
+    font-size: 12px;
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

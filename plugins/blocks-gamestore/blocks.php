@@ -178,3 +178,47 @@ function view_block_featured_games( $attributes ) {
 
     return ob_get_clean();
 }
+
+function view_block_call_to_action( $attributes ) {
+    $assets_url = plugin_dir_url( __FILE__ ) . 'assets/call-to-action/';
+    $background = ! empty( $attributes['background'] ) ? $attributes['background'] : $assets_url . 'background.png';
+    $icon       = ! empty( $attributes['icon'] ) ? $attributes['icon'] : $assets_url . 'icon.svg';
+    $character  = ! empty( $attributes['character'] ) ? $attributes['character'] : $assets_url . 'character.png';
+    $shop_url   = function_exists( 'wc_get_page_permalink' ) ? wc_get_page_permalink( 'shop' ) : home_url( '/' );
+    $buttons    = array(
+        array( $attributes['buttonOneLabel'] ?? 'Game Store', ! empty( $attributes['buttonOneUrl'] ) ? $attributes['buttonOneUrl'] : $shop_url ),
+        array( $attributes['buttonTwoLabel'] ?? 'Services', $attributes['buttonTwoUrl'] ?? '' ),
+        array( $attributes['buttonThreeLabel'] ?? 'Downloads', $attributes['buttonThreeUrl'] ?? '' ),
+    );
+
+    ob_start();
+    ?>
+    <section <?php echo get_block_wrapper_attributes( array( 'class' => 'alignfull' ) ); ?>>
+        <img class="call-to-action-background" src="<?php echo esc_url( $background ); ?>" alt="" loading="lazy" decoding="async">
+        <div class="call-to-action-overlay" aria-hidden="true"></div>
+        <div class="call-to-action-panel wrapper">
+            <div class="call-to-action-content">
+                <img class="call-to-action-icon" src="<?php echo esc_url( $icon ); ?>" alt="" width="48" height="48">
+                <h2><?php echo esc_html( $attributes['title'] ?? 'Embark On High-Stakes Missions' ); ?></h2>
+                <p><?php echo esc_html( $attributes['description'] ?? 'Take on high-risk, high-reward missions from the galaxy’s crime syndicates. Steal valuable goods, infiltrate secret locations, and outwit enemies as one of the galaxy’s most wanted. Every choice you make influences your ever-changing reputation.' ); ?></p>
+                <div class="call-to-action-buttons">
+                    <?php foreach ( $buttons as $button ) : ?>
+                        <?php if ( '' === trim( $button[0] ) ) { continue; } ?>
+                        <?php if ( ! empty( $button[1] ) ) : ?>
+                            <a href="<?php echo esc_url( $button[1] ); ?>"><?php echo esc_html( $button[0] ); ?></a>
+                        <?php else : ?>
+                            <span><?php echo esc_html( $button[0] ); ?></span>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+            <div class="call-to-action-visual">
+                <img class="call-to-action-character-blur" src="<?php echo esc_url( $character ); ?>" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <img class="call-to-action-character" src="<?php echo esc_url( $character ); ?>" alt="<?php echo esc_attr( $attributes['characterAlt'] ?? 'Game character' ); ?>" loading="lazy" decoding="async">
+            </div>
+        </div>
+    </section>
+    <?php
+
+    return ob_get_clean();
+}

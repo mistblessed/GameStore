@@ -1,0 +1,32 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blocks-gamestore/block-call-to-action",
+  "version": "0.1.0",
+  "title": "Call to Action",
+  "category": "gamestore",
+  "icon": "megaphone",
+  "description": "A promotional banner with editable imagery and links.",
+  "supports": {
+    "html": false,
+    "align": [ "full" ]
+  },
+  "attributes": {
+    "title": { "type": "string", "default": "Embark On High-Stakes Missions" },
+    "description": { "type": "string", "default": "Take on high-risk, high-reward missions from the galaxy’s crime syndicates. Steal valuable goods, infiltrate secret locations, and outwit enemies as one of the galaxy’s most wanted. Every choice you make influences your ever-changing reputation." },
+    "icon": { "type": "string" },
+    "background": { "type": "string" },
+    "character": { "type": "string" },
+    "characterAlt": { "type": "string", "default": "Game character" },
+    "buttonOneLabel": { "type": "string", "default": "Game Store" },
+    "buttonOneUrl": { "type": "string" },
+    "buttonTwoLabel": { "type": "string", "default": "Services" },
+    "buttonTwoUrl": { "type": "string" },
+    "buttonThreeLabel": { "type": "string", "default": "Downloads" },
+    "buttonThreeUrl": { "type": "string" }
+  },
+  "textdomain": "blocks-gamestore",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

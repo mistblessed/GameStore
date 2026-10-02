@@ -48,5 +48,8 @@ function create_block_blocks_gamestore_block_init() {
 	register_block_type( __DIR__ . '/build/block-featured-games', array(
 		'render_callback' => 'view_block_featured_games'
 	));
+	register_block_type( __DIR__ . '/build/block-call-to-action', array(
+		'render_callback' => 'view_block_call_to_action'
+	));
 }
 add_action( 'init', 'create_block_blocks_gamestore_block_init' );
